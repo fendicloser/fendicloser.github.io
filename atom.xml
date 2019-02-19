@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fendicloser.top/"/>
-  <updated>2019-02-19T11:57:27.170Z</updated>
+  <updated>2019-02-19T12:26:20.656Z</updated>
   <id>http://fendicloser.top/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>react-naitve横屏时模态框ios异常</title>
-    <link href="http://fendicloser.top/2019/02/19/react-naitve%E6%A8%AA%E5%B1%8F%E6%97%B6%E6%A8%A1%E6%80%81%E6%A1%86ios%E5%BC%82%E5%B8%B8/"/>
-    <id>http://fendicloser.top/2019/02/19/react-naitve横屏时模态框ios异常/</id>
-    <published>2019-02-19T11:56:01.000Z</published>
-    <updated>2019-02-19T11:57:27.170Z</updated>
+    <title>react-native横屏时模态框ios异常</title>
+    <link href="http://fendicloser.top/2019/02/19/react-native%E6%A8%AA%E5%B1%8F%E6%97%B6%E6%A8%A1%E6%80%81%E6%A1%86ios%E5%BC%82%E5%B8%B8/"/>
+    <id>http://fendicloser.top/2019/02/19/react-native横屏时模态框ios异常/</id>
+    <published>2019-02-19T12:24:30.000Z</published>
+    <updated>2019-02-19T12:26:20.656Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>第一个blog，使用’react-native-orientation’，在componentDidMount()里设置Orientation.lockToLandscape()横屏。这个时候使用<modal>在ios中就会报错。又是一个react native兼容性上的问题，来看看官方的解释：</modal></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>使用’react-native-orientation’，在componentDidMount()里设置Orientation.lockToLandscape()横屏。这个时候使用<modal>在ios中就会报错。又是一个react native兼容性上的问题，来看看官方的解释：</modal></p><p><img src="/2019/02/19/react-native横屏时模态框ios异常/958.jpg" alt></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h2&gt;&lt;p&gt;第一个blog，使用’react-native-orientation’，在componentDidMount()里设置Orientatio
+        &lt;h2 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h2&gt;&lt;p&gt;使用’react-native-orientation’，在componentDidMount()里设置Orientation.lockTo
       
     
     </summary>
