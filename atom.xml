@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Longfu Sun</title>
   
-  <subtitle>Live a life you will remember \n JS、React、the Raspberry Pi</subtitle>
+  <subtitle>Live a life you will remember</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fendicloser.top/"/>
