@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fendicloser.top/"/>
-  <updated>2019-02-19T13:13:26.227Z</updated>
+  <updated>2019-02-19T15:08:57.695Z</updated>
   <id>http://fendicloser.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>千道前端面试题</title>
+    <link href="http://fendicloser.top/2019/02/19/%E5%8D%83%E9%81%93%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://fendicloser.top/2019/02/19/千道前端面试题/</id>
+    <published>2019-02-19T15:02:16.000Z</published>
+    <updated>2019-02-19T15:08:57.695Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理常见面试题</p><h4 id="1-ES6-里-let-和-var-的区别"><a href="#1-ES6-里-let-和-var-的区别" class="headerlink" title="1. ES6 里 let 和 var 的区别"></a>1. ES6 里 let 和 var 的区别</h4><p>答： 首先let不能重复声明，var的作用域被规定为一个函数作用域，而let则被规定为块作用域，块作用域要比函数作用域小一些，但是如果两者既没在函数中，也没在块作用域中定义，那么两者都属于全局作用域。let可以防止变量污染，比如for循环中的let，只能在这个for循环中用到。</p><h4 id="2-简述事件委托机制（事件捕获、冒泡，父元素监听）"><a href="#2-简述事件委托机制（事件捕获、冒泡，父元素监听）" class="headerlink" title="2. 简述事件委托机制（事件捕获、冒泡，父元素监听）"></a>2. 简述事件委托机制（事件捕获、冒泡，父元素监听）</h4><p>答： 要用明白事件委托就得先知道事件捕获和冒泡，</p><p>   事件冒泡是指一个元素接收到事件后会向他的父级传递事件，一直到window，</p><p>   事件捕获是指从dom的根开始事件被从目标元素的所以祖先元素开始向下传递，div.addEventListener(‘click’,function(){},true), 这第三个元素为true时就是捕获获取，默认为冒泡获取。</p><p>   事件委托就是把子元素的事件放在父元素上，这样能提高性能，缩短查找dom的事件，第二，新的子元素也有相同的事件。<br>   当需要停止冒泡行为时，可以使用</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;整理常见面试题&lt;/p&gt;
+&lt;h4 id=&quot;1-ES6-里-let-和-var-的区别&quot;&gt;&lt;a href=&quot;#1-ES6-里-let-和-var-的区别&quot; class=&quot;headerlink&quot; title=&quot;1. ES6 里 let 和 var 的区别&quot;&gt;&lt;/a&gt;1. ES6 
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>react-native横屏时模态框ios异常</title>
