@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fendicloser.top/"/>
-  <updated>2019-04-11T01:04:56.971Z</updated>
+  <updated>2019-04-17T12:26:57.885Z</updated>
   <id>http://fendicloser.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>dom、jquery获取常用浏览器尺寸和其应用。</title>
+    <link href="http://fendicloser.top/2019/04/17/dom%E3%80%81jquery%E8%8E%B7%E5%8F%96%E5%B8%B8%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B0%BA%E5%AF%B8%E5%92%8C%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%82/"/>
+    <id>http://fendicloser.top/2019/04/17/dom、jquery获取常用浏览器尺寸和其应用。/</id>
+    <published>2019-04-17T11:52:13.000Z</published>
+    <updated>2019-04-17T12:26:57.885Z</updated>
+    
+    <content type="html"><![CDATA[<p>在浏览一些社交网站、内容网站时，我们经常发现当滚轮马上就要拉到屏幕地下是的时候，浏览器会自动为你追加内容，追加的内容怎么都追加不完。</p><p>可谓深受其害，在找工作的时候，我时常希望能查看网站最底下的公司地址、证书号或点击”加入我们”，结果就是不让我看到这些内容，，，</p><p>言归正传，这其实是一种有效的分割网络请求的方式，当前用户对首屏事件长短的要求越来越苛刻，有效的分割网络请求是提高网站前端性能的重要方式。</p><p>将ajax请求分割到用户的每次下拉到低的动作上，需要现保存上一次解决的数据结束的位置。对于初学者而言，实现这一功能的前提是知道如果获取滚轮现在的位置，这里现列出几个和浏览器宽高有关的参数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">页可见区域宽： <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line">网页可见区域高： <span class="built_in">document</span>.body.clientHeight;</span><br><span class="line">网页可见区域宽： <span class="built_in">document</span>.body.offsetWidth (包括边线的宽);</span><br><span class="line">网页可见区域高： <span class="built_in">document</span>.body.offsetHeight (包括边线的宽);</span><br><span class="line">网页正文全文宽： <span class="built_in">document</span>.body.scrollWidth;</span><br><span class="line">网页正文全文高： <span class="built_in">document</span>.body.scrollHeight;</span><br><span class="line">网页被卷去的高： <span class="built_in">document</span>.body.scrollTop;</span><br><span class="line">网页被卷去的左： <span class="built_in">document</span>.body.scrollLeft;</span><br><span class="line">网页正文部分上： <span class="built_in">window</span>.screenTop;</span><br><span class="line">网页正文部分左： <span class="built_in">window</span>.screenLeft;</span><br><span class="line">屏幕分辨率的高： <span class="built_in">window</span>.screen.height;</span><br><span class="line">屏幕分辨率的宽： <span class="built_in">window</span>.screen.width;</span><br><span class="line">屏幕可用工作区高度： <span class="built_in">window</span>.screen.availHeight;</span><br></pre></td></tr></table></figure></p><p>上面这些参数在工作中还是经常会被用到的。也都非常基础的dom操作。<br>对于它们，原生和jquery都非常容易进行操作：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="comment">//scrollTop就是触发滚轮事件时滚轮的高度</span></span><br><span class="line">     <span class="keyword">var</span> scrollTop = <span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">document</span>.body.scrollTop;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"滚动距离"</span> + scrollTop);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//为了保证兼容性，这里取两个值，哪个有值取哪一个</span></span><br><span class="line">    <span class="comment">//scrollTop就是触发滚轮事件时滚轮的高度</span></span><br><span class="line">    <span class="keyword">var</span> scrollTop = <span class="built_in">document</span>.documentElement.scrollTop || <span class="built_in">document</span>.body.scrollTop;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"滚动距离"</span> + dis);</span><br><span class="line">&#125;)</span><br><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> dis=$(<span class="built_in">document</span>).height() - $(<span class="keyword">this</span>).scrollTop() - $(<span class="keyword">this</span>).height()</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">"距底部"</span> + dis);</span><br><span class="line">&#125;)</span><br><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> distance=$(<span class="string">'#main'</span>).offset().top-$(<span class="built_in">window</span>).scrollTop()</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"距离div顶部"</span> + distance);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p><p>前两种都是获取滚动的距离，第三种是距离window底部的位置（最重要），而最后一种是当前顶部和#mian div顶部的距离（偏移值，可正可负）</p><p>第三种就是进行ajax分割的响应函数，大家在使用前最后自己打印距离测试一下，第四种也需要强调一下：我曾经在react中尝试对滚轮操作作出响应，试了几种之后只有这种可用、也非常灵活。</p><p>以上就是常用的四种scroll的操作了。下一阶段我将研究图片懒加载的实现</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在浏览一些社交网站、内容网站时，我们经常发现当滚轮马上就要拉到屏幕地下是的时候，浏览器会自动为你追加内容，追加的内容怎么都追加不完。&lt;/p&gt;
+&lt;p&gt;可谓深受其害，在找工作的时候，我时常希望能查看网站最底下的公司地址、证书号或点击”加入我们”，结果就是不让我看到这些内容，，，
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>关于diy项目的亮点、解决方案、难点的备注</title>
